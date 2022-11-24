@@ -87,12 +87,9 @@ export default {
       });
     },
     deleteMahasiswa: function (nim) {
+      console.log(nim);
       this.axios
-        .delete("http://127.0.0.1:3000/del-mahasiswa", {
-          params: {
-            nim: nim,
-          },
-        })
+        .delete(`http://127.0.0.1:3000/del-mahasiswa/${nim}`)
         .then((res) => {
           console.log(res);
           this.getAllMahasiswa();
